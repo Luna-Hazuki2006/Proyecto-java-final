@@ -53,6 +53,10 @@ public class Principal extends JFrame {
 		this.cadministradores = cadministradores;
 	}
 	
+	public JComboBox<String> getCtipos() {return ctipos;}
+
+	public void setCtipos(JComboBox<String> ctipos) {this.ctipos = ctipos;}
+
 	public JTextField revisar_cedula() {return tced;}
 	
 	public JTextField revisar_nombres() {return tnom;}
@@ -132,7 +136,7 @@ public class Principal extends JFrame {
 		preparar();
 		norte = new JPanel();
 		Cuztom.Panel(norte);
-		centro = new JPanel(new GridLayout(6, 1));
+		centro = new JPanel(new GridLayout(7, 1));
 		Cuztom.Panel(centro);
 		sur = new JPanel();
 		Cuztom.Panel(sur);
@@ -227,6 +231,7 @@ public class Principal extends JFrame {
 		add(sur, BorderLayout.SOUTH);
 		
 		cm = new Controlador_menu(this);
+		cm.llenar_tipos();
 		salir.addActionListener(cm);
 		registrar.addActionListener(cm);
 		tced.getDocument().addDocumentListener(cm);
@@ -337,7 +342,7 @@ public class Principal extends JFrame {
 		add(sur, BorderLayout.SOUTH);
 		
 		cm = new Controlador_menu(this);
-		cm.llenar();
+		cm.llenar_usuarios();
 		salir.addActionListener(cm);
 		bclientess.addActionListener(cm);
 		/* bclientesr.addActionListener(cm); */

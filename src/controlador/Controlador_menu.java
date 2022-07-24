@@ -63,9 +63,12 @@ public class Controlador_menu implements ActionListener, DocumentListener, KeyLi
 			c.setDireccion(p.getTdir());
 			c.setTelefono(p.getTtel());
 			c.setClave(p.getTcla());
-			if (p.getTitulo().contains("clientes")) c.setTipo("0001");
-			else if (p.getTitulo().contains("empleado")) c.setTipo("0002");
-			else if (p.getTitulo().contains("administrador")) c.setTipo("0003");
+			/*
+			 * if (p.getTitulo().contains("clientes")) c.setTipo("0001"); else if
+			 * (p.getTitulo().contains("empleado")) c.setTipo("0002"); else if
+			 * (p.getTitulo().contains("administrador")) c.setTipo("0003");
+			 */
+			c.setTipo(mc.dar_codigo_tipo(p.getCtipos().getSelectedItem().toString()));
 			boolean verdad = mc.crear(c);
 			if (verdad) {
 				JOptionPane.showConfirmDialog(
@@ -112,7 +115,7 @@ public class Controlador_menu implements ActionListener, DocumentListener, KeyLi
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 	
-	public void llenar() {
+	public void llenar_usuarios() {
 		ArrayList<Cliente> usuarios = mc.listar_clientes();
 		for (Cliente c : usuarios) 
 			p.getCclientes().addItem(c.getCedula());
@@ -128,6 +131,13 @@ public class Controlador_menu implements ActionListener, DocumentListener, KeyLi
 			p.getCadministradores().addItem(c.getCedula());
 		if (usuarios.isEmpty()) p.desaparecer_administrador();
 		else p.aparecer_administrador();
+	}
+	
+	public void llenar_tipos() {
+		ArrayList<String> tipos = mc.dar_nombres_tipos();
+		for (String string : tipos) {
+			p.getCtipos().addItem(string);
+		}
 	}
 	
 	public void validar() {
