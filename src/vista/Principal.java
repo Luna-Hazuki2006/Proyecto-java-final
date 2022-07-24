@@ -22,8 +22,9 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel norte, centro, sur, x;
-	private JComboBox<String> cclientes, cempleados, cadministradores;
-	private JButton bclientess, bempleadoss, badministradoress, bclientesr, bempleadosr, badministradoresr, salir, registrar;
+	private JComboBox<String> cclientes, cempleados, cadministradores, ctipos;
+	private JButton bclientess, bempleadoss, badministradoress,
+			/* bclientesr, bempleadosr, badministradoresr, */ iregistrar, salir, registrar;
 	private JLabel sesion, registro, titulo, lced, lnom, lape, ldir, ltel, lcla;
 	private JTextField tced, tnom, tape, tdir, ttel, tcla;
 	private Controlador_menu cm;
@@ -149,6 +150,7 @@ public class Principal extends JFrame {
 		ltel = new JLabel("Teléfono:");
 		Cuztom.Label(ltel);
 		lcla = new JLabel("Contraseña:");
+		ctipos = new JComboBox<String>();
 		Cuztom.Label(lcla);
 		
 		tced = new JTextField(10);
@@ -166,6 +168,8 @@ public class Principal extends JFrame {
 		
 		registrar = new JButton("Registrar");
 		Cuztom.Boton(registrar);
+		iregistrar = new JButton("Registrar sesión");
+		Cuztom.Boton(iregistrar);
 		salir = new JButton("Volver");
 		Cuztom.Boton(salir);
 		
@@ -254,12 +258,12 @@ public class Principal extends JFrame {
 		Cuztom.Boton(bempleadoss);
 		badministradoress = new JButton("Como administrador");
 		Cuztom.Boton(badministradoress);
-		bclientesr = new JButton("Como nuevo cliente");
-		Cuztom.Boton(bclientesr);
-		bempleadosr = new JButton("Como nuevo empleado");
-		Cuztom.Boton(bempleadosr);
-		badministradoresr = new JButton("Como nuevo administrador");
-		Cuztom.Boton(badministradoresr);
+		/*
+		 * bclientesr = new JButton("Como nuevo cliente"); Cuztom.Boton(bclientesr);
+		 * bempleadosr = new JButton("Como nuevo empleado"); Cuztom.Boton(bempleadosr);
+		 * badministradoresr = new JButton("Como nuevo administrador");
+		 * Cuztom.Boton(badministradoresr);
+		 */
 		salir = new JButton("Salir");
 		Cuztom.Boton(salir);
 		
@@ -290,7 +294,7 @@ public class Principal extends JFrame {
 		
 		x = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		Cuztom.Panel(x);
-		x.add(bclientesr);
+		/* x.add(bclientesr); */
 		centro.add(x);
 		
 		x = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -301,7 +305,7 @@ public class Principal extends JFrame {
 		
 		x = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		Cuztom.Panel(x);
-		x.add(bempleadosr);
+		/* x.add(bempleadosr); */
 		centro.add(x);
 		
 		x = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -312,7 +316,7 @@ public class Principal extends JFrame {
 		
 		x = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		Cuztom.Panel(x);
-		x.add(badministradoresr);
+		/* x.add(badministradoresr); */
 		centro.add(x);
 		
 		sur.add(salir);
@@ -325,11 +329,11 @@ public class Principal extends JFrame {
 		cm.llenar();
 		salir.addActionListener(cm);
 		bclientess.addActionListener(cm);
-		bclientesr.addActionListener(cm);
+		/* bclientesr.addActionListener(cm); */
 		bempleadoss.addActionListener(cm);
-		bempleadosr.addActionListener(cm);
+		/* bempleadosr.addActionListener(cm); */
 		badministradoress.addActionListener(cm);
-		badministradoresr.addActionListener(cm);
+		/* badministradoresr.addActionListener(cm); */
 		
 		pack();
 		setLocationRelativeTo(null);

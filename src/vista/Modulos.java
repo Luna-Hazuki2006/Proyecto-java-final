@@ -283,8 +283,9 @@ public class Modulos extends JFrame {
 		Cuztom.Menu(mvehiculos);
 		mreservas = new JMenu("Reservas");
 		Cuztom.Menu(mreservas);
-		malquileres = new JMenu("Alquileres");
-		Cuztom.Menu(malquileres);
+		/*
+		 * malquileres = new JMenu("Alquileres"); Cuztom.Menu(malquileres);
+		 */
 		mreportes = new JMenu("Reportes");
 		Cuztom.Menu(mreportes);
 		mvolver = new JMenu("Volver");
@@ -308,14 +309,14 @@ public class Modulos extends JFrame {
 		menu.add(mclientes);
 		menu.add(mvehiculos);
 		menu.add(mreservas);
-		menu.add(malquileres);
+		/* menu.add(malquileres); */
 		menu.add(mreportes);
 		menu.add(mvolver);
 		
 		mclientes.add(iclientes);
 		mvehiculos.add(ivehiculos);
 		mreservas.add(ireservas);
-		malquileres.add(ialquileres);
+		/* malquileres.add(ialquileres); */
 		mreportes.add(irepa);
 		mreportes.add(irepb);
 		mvolver.add(ivolver);
@@ -323,7 +324,7 @@ public class Modulos extends JFrame {
 		iclientes.addActionListener(cm);
 		ivehiculos.addActionListener(cm);
 		ireservas.addActionListener(cm);
-		ialquileres.addActionListener(cm);
+		/* ialquileres.addActionListener(cm); */
 		irepa.addActionListener(cm);
 		irepb.addActionListener(cm);
 		ivolver.addActionListener(cm);
@@ -418,21 +419,15 @@ public class Modulos extends JFrame {
 		setLocationRelativeTo(null);
 	}
 	
-	public void alquilar() {
-		preparar();
-		
-		norte = new JPanel();
-		Cuztom.Panel(norte);
-		centro = new JPanel();
-		Cuztom.Panel(centro);
-		sur = new JPanel();
-		Cuztom.Panel(sur);
-		
-		
-		
-		pack();
-		setLocationRelativeTo(null);
-	}
+	
+	/*
+	 * public void alquilar() { preparar();
+	 * 
+	 * norte = new JPanel(); Cuztom.Panel(norte); centro = new JPanel();
+	 * Cuztom.Panel(centro); sur = new JPanel(); Cuztom.Panel(sur);
+	 * 
+	 * pack(); setLocationRelativeTo(null); }
+	 */
 	
 	public void preparar_reservas() {
 		preparar();

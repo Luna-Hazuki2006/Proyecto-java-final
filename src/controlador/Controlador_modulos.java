@@ -35,9 +35,10 @@ public class Controlador_modulos implements ActionListener {
 			m.reportes_a();
 		} else if (eve.getActionCommand().equalsIgnoreCase("Vehículos no retornados")) {
 			m.reportes_b();
-		} else if (eve.getActionCommand().equalsIgnoreCase("Alquileres")) {
-			m.alquilar();
-		}
+		} /*
+			 * else if (eve.getActionCommand().equalsIgnoreCase("Alquileres")) {
+			 * m.alquilar(); }
+			 */
 	}
 	
 	public void preparar() {
