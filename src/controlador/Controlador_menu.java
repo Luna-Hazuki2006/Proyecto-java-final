@@ -43,16 +43,18 @@ public class Controlador_menu implements ActionListener, DocumentListener, KeyLi
 		} else if (eve.getActionCommand().equalsIgnoreCase("como administrador")) {
 			c = mc.buscar(p.getCadministradores().getSelectedItem().toString());
 			procedimiento("administrador");
-		} else if (eve.getActionCommand().equalsIgnoreCase("como nuevo cliente")) {
+		} else if (eve.getActionCommand().equalsIgnoreCase("como nuevo usuario")) {
 			p.registro();
-			p.setTitulo("Registro de cliente");
-		} else if (eve.getActionCommand().equalsIgnoreCase("como nuevo empleado")) {
-			p.registro();
-			p.setTitulo("Registro de empleado");
-		} else if (eve.getActionCommand().equalsIgnoreCase("como nuevo administrador")) {
-			p.registro();
-			p.setTitulo("Registro de administrador");
-		} else if (eve.getActionCommand().equalsIgnoreCase("volver")) {
+			p.setTitulo("Registro de usuario");
+		}
+		/*
+			 * else if (eve.getActionCommand().equalsIgnoreCase("como nuevo cliente")) {
+			 * p.registro(); p.setTitulo("Registro de cliente"); } else if
+			 * (eve.getActionCommand().equalsIgnoreCase("como nuevo empleado")) {
+			 * p.registro(); p.setTitulo("Registro de empleado"); } else if
+			 * (eve.getActionCommand().equalsIgnoreCase("como nuevo administrador")) {
+			 * p.registro(); p.setTitulo("Registro de administrador"); }
+			 */ else if (eve.getActionCommand().equalsIgnoreCase("volver")) {
 			p.inicio();
 		} else if (eve.getActionCommand().equalsIgnoreCase("registrar")) {
 			c.setCedula(p.getTced());
